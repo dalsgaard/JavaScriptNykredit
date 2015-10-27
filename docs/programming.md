@@ -2,7 +2,7 @@
 
 ## Statement
 
-```
+```js
 a = b + 3;
 ```
 
@@ -22,13 +22,13 @@ The statement `a = b + 3;` consists of four expressions
 
 ### Expression Statement
 
-```
+```js
 c = 8;
 ```
 
 ### Call Expression
 
-```
+```js
 console.log(c);
 ```
 
@@ -42,13 +42,13 @@ The JavaScript engine compiles the program on the fly and then immediately runs 
 
 ### Declaring Variables
 
-```
+```js
 var a
 ```
 
 Or with an assignment
 
-```
+```js
 var b = 6
 ```
 
@@ -60,7 +60,7 @@ var b = 6
 
 As in
 
-```
+```js
 c = 8
 ```
 
@@ -73,7 +73,7 @@ c = 8
 
 As in
 
-```
+```js
 3 + 4
 ```
 
@@ -86,7 +86,7 @@ As in
 
 As in
 
-```
+```js
 c += 2
 ```
 
@@ -97,7 +97,7 @@ c += 2
 
 As in
 
-```
+```js
 i++
 ```
 
@@ -107,7 +107,7 @@ i++
 
 As in
 
-```
+```js
 foo.bar
 ```
 
@@ -132,7 +132,7 @@ foo.bar
 
 ### Comments
 
-```
+```js
 // Line comment
 
 a = 4; // Rest of line comment
@@ -158,7 +158,7 @@ Variables can hold values of different types.
 
 ### Blocks
 
-```
+```js
 {
   a = 4;
   b = 6;
@@ -170,7 +170,7 @@ Variables can hold values of different types.
 
 #### if-Statements
 
-```
+```js
 if (index > 5) {
   // true stuff
 }
@@ -186,7 +186,7 @@ if (index === 1) {
 
 #### while-Statements
 
-```
+```js
 while (index < 10) {
   // zero or more repeating stuff
 }
@@ -194,7 +194,7 @@ while (index < 10) {
 
 #### do-Statements
 
-```
+```js
 do {
   // one ore more repeating stuff
 } while (index < 10);
@@ -202,7 +202,7 @@ do {
 
 #### for-Statements
 
-```
+```js
 for (var i = 0; i < 10; i++) {
   // 10 times repeating stuff
 }
@@ -210,7 +210,7 @@ for (var i = 0; i < 10; i++) {
 
 ### Functions
 
-```
+```js
 function foo() {
   // stuff
 }
@@ -218,7 +218,7 @@ function foo() {
 
 #### Parameters
 
-```
+```js
 function foo(a, b) {
   // stuff with a and b
 }
@@ -226,7 +226,7 @@ function foo(a, b) {
 
 #### Return Statements
 
-```
+```js
 function foo(a, b) {
   return a + b;
 }
@@ -238,7 +238,7 @@ function foo(a, b) {
 
 #### Lexical Scope
 
-```
+```js
 function bar() {
   console.log(i); // Error!
 }
@@ -253,7 +253,7 @@ foo();
 
 #### Nested Scope
 
-```
+```js
 function foo() {
   var i = 5;
 

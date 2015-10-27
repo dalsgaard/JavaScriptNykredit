@@ -18,7 +18,7 @@ The process of taking an AST and turning it into executable code.
 
 ## Compiler, Engine and Scope
 
-```
+```js
 var i = 5;
 ```
 
@@ -29,30 +29,30 @@ var i = 5;
 
 Left Hand Side and Right Hand side of an assignment.
 
-```
+```js
 a = 3;
 ```
 
 In the current scope there is a LHS look-up of `a`
 
-```
+```js
 b = a;
 ```
 
 In the current scope there is a LHS look-up of `b`, and a RHS look-up of `a`.
 
-```
+```js
 function foo(b) {
   console.log(b);
 }
-foo(3);	
-```	
+foo(3);
+```
 
 In the scope of `foo` there is a LHS look-up `b` (implicite `b = 3`), and a RHS look-up of `b`.
 
 ## Nested Scopes
 
-```
+```js
 var a = 1;
 var b = 2;
 
@@ -76,7 +76,7 @@ foo();
 
 If a variable look-up fails in a given scope,
 then the look-up is attempted at that given scope's parent scope - and so on.
-	
+
 ## Global Scope
 
 The top-level scope has no parent scope, and is called Global Scope.
@@ -89,13 +89,13 @@ If a LHS look-up is failing in the Global Scope, the variable is created (in Glo
 
 Global variables are automatically also properties of the global object (window in browsers, global in node, etc.), so it is possible to reference a global variable not directly by its lexical name, but instead indirectly as a property reference of the global object.
 
-```
+```js
 var x = 7;
 console.log(window.x); // => 7
 ```
 
 ## Hiding
-	
+
 ### Principle of Least Privilege
 
 This principle states that in the design of software, such as the API for a module/object, you should expose only what is minimally necessary, and 'hide' everything else.
@@ -109,7 +109,7 @@ Avoid unintended collision between two different identifiers with the same name 
 
 If function is the very first thing in the statement, then it’s a function declaration. Otherwise, it’s a function expression.
 
-```
+```js
 (function foo() {
   // stuff
 });
@@ -119,12 +119,12 @@ function bar() {
 }
 
 typeof foo; // => 'undefined'
-typeof bar; // => 'function'	
+typeof bar; // => 'function'
 ```
 
 ## Anonymous Versus Named Functions
 
-```
+```js
 setTimeout(function() {
   var a = b;
 }, 1);
@@ -136,7 +136,7 @@ setTimeout(function foo() {
 
 ## Hoisting
 
-```
+```js
 a = 7;
 
 function foo() {
@@ -151,7 +151,7 @@ console.log(a);
 
 Declarations are hoisted.
 
-```
+```js
 a = 7;
 
 function foo() {
@@ -164,7 +164,7 @@ foo();
 
 But only the declarations, not the assignments.
 
-```
+```js
 foo();
 bar();
 
