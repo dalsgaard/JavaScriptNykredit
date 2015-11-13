@@ -17,14 +17,14 @@
 
 #### Literals
 
-```
+```js
 var a = 'single';
 var b = "double";
 ```
 
 #### typeof
 
-```
+```js
 var a = 'foo';
 typeof a; // 'string'
 ```
@@ -33,14 +33,14 @@ typeof a; // 'string'
 
 #### Literals
 
-```
+```js
 var a = 1;
 var b = 2.3;
 ```
 
 #### typeof
 
-```
+```js
 var a = 2;
 typeof a; // 'number'
 ```
@@ -49,14 +49,14 @@ typeof a; // 'number'
 
 #### Literals
 
-```
+```js
 var a = true;
 var b = false;
 ```
 
 #### typeof
 
-```
+```js
 var a = false;
 typeof a; // 'boolean'
 ```
@@ -65,13 +65,13 @@ typeof a; // 'boolean'
 
 #### Literals
 
-```
+```js
 var a = null;
 ```
 
 #### typeof
 
-```
+```js
 var a = null;
 typeof a; // 'object' - Bug!
 ```
@@ -80,13 +80,13 @@ typeof a; // 'object' - Bug!
 
 #### Literals
 
-```
+```js
 var a = undefined;
 ```
 
 #### typeof
 
-```
+```js
 var a;
 typeof a; // 'undefined'
 ```
@@ -95,7 +95,7 @@ typeof a; // 'undefined'
 
 #### Literals
 
-```
+```js
 var a = {
   b: 5,
   c: 'foo'
@@ -104,14 +104,14 @@ var a = {
 
 #### typeof
 
-```
+```js
 var a;
 typeof a; // 'object'
 ```
 
 #### Property Accessors
 
-```
+```js
 var b = a.b;
 var c = a['c'];
 ```
@@ -126,30 +126,30 @@ var c = a['c'];
 
 #### Literals
 
-```
+```js
 var a = [1, 2, 4, 8];
 var b = [null, false, 5, 'foo', undefined];
 var c = [];
-var d = [[1, 3], [2, 4]]; 
+var d = [[1, 3], [2, 4]];
 ```
 
 #### typeof
 
-```
+```js
 var a = [];
 typeof a; // 'object'
 ```
 
 #### Accessors
 
-```
+```js
 var i = a[2];
 a[4] = 5;
 ```
 
 #### Build-In Properties
 
-```
+```js
 var a = [1, 2, 4];
 a.length; // 3
 ```
@@ -158,7 +158,7 @@ a.length; // 3
 
 #### Literals
 
-```
+```js
 function foo(a, b, c) {
   // stuff
 }
@@ -174,14 +174,14 @@ var baz = function foo(a, b, c) {
 
 #### typeof
 
-```
+```js
 function foo() {}
 typeof foo; // 'object'
 ```
 
 #### Build-In Properties
 
-```
+```js
 function foo(a, b, c) {
   return a + b + c;
 }
@@ -204,14 +204,14 @@ JavaScript uses a kind of Lexical Scope called Function Scope where the function
 
 ### Hoisting
 
-Every variable declaration is hoisted to the top of the scope. 
+Every variable declaration is hoisted to the top of the scope.
 
 
 ## Conditionals
 
 ### More on if-else-Statements
 
-```
+```js
 if (i < 5) i = 0;
 
 if (i < 5) i = 0 else i = 10;
@@ -225,11 +225,11 @@ if (i < 5) {
 
 ### switch-Statements
 
-```
+```js
 switch (i) {
   case 1:
     // stuff
-    break;	
+    break;
   case 2:
     // stuff
     break;
@@ -251,7 +251,7 @@ or storing them in data structures.
 
 ### Passing functions as arguments to other functions
 
-```
+```js
 function foo(bar) {
   bar();
 }
@@ -259,7 +259,7 @@ function foo(bar) {
 
 #### The build-in setTimeout function
 
-```
+```js
 setTimeout(function() {
   // stuff
 }, 1000);
@@ -267,7 +267,7 @@ setTimeout(function() {
 
 #### Returning them as the values from other functions
 
-```
+```js
 function foo() {
   return function() {
     // stuff
@@ -277,7 +277,7 @@ function foo() {
 
 #### Assigning them to variables
 
-```
+```js
 var foo = function() {
   // stuff
 };
@@ -285,7 +285,7 @@ var foo = function() {
 
 #### Storing them in data structures
 
-```
+```js
 var foo = {
   bar: function() {
     // stuff
@@ -295,7 +295,7 @@ var foo = {
 
 ### Immediately Invoked Function Expressions (IIFEs)
 
-```
+```js
 (function() {
   //stuff
 })();
@@ -303,7 +303,7 @@ var foo = {
 
 ### Closure
 
-```
+```js
 function foo() {
   var a = 0;
   return function(b) {

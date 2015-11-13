@@ -1,6 +1,6 @@
 # this
 
-```
+```js
 function hello() {
   console.log("Hello, I am " + this.name);
 }
@@ -16,7 +16,7 @@ var sophus = {
 hello.call(kim);
 hello.call(sophus);
 ```
-	
+
 `this` is neither a reference to the function itself, nor is it a reference to the function’s lexical scope.
 
 
@@ -24,7 +24,7 @@ hello.call(sophus);
 
 The location in code where a function is called.
 
-```
+```js
 function hello() {
   // stuff
 }
@@ -45,7 +45,7 @@ hello.call(kim); // Call-Site
 
 ### Default Binding
 
-```
+```js
 function foo() {
   console.log(this.a);
 }
@@ -57,20 +57,20 @@ foo();
 
 And to be sure
 
-```
+```js
 function foo() {
-  var a = 4;	
+  var a = 4;
 
-  function bar() {	
+  function bar() {
     console.log(this.a);
   }
-	
+
   bar();
 }
 
 var a = 3;
 
-foo();	
+foo();
 ```
 
 #### Aside: Using globals in NodeJS
@@ -81,7 +81,7 @@ foo();
 
 ### Implicit Binding
 
-```
+```js
 function hello() {
   console.log("Hello, I am " + this.name);
 }
@@ -96,7 +96,7 @@ kim.hello();
 
 The object the function is a property on when called.
 
-```
+```js
 function foo() {
   console.log(this.a);
 }
@@ -114,7 +114,7 @@ bar.baz.foo();
 
 #### When implicit is lost
 
-```
+```js
 var foo = {
   bar: 5,
   baz: function() {
@@ -127,7 +127,7 @@ setTimeout(foo.baz, 10);
 
 A function reference is given as a callback.
 
-```
+```js
 var foo = {
   bar: 5,
   baz: function() {
@@ -145,7 +145,7 @@ A callback is created inside a function.
 
 ### Explicit Binding
 
-```
+```js
 function foo(b, c) {
   console.log(this.a + b + c);
 }
@@ -158,7 +158,7 @@ foo.apply(bar, [3, 4]);
 
 ### Hard Binding
 
-```
+```js
 function foo() {
   console.log(this.a);
 }
@@ -167,13 +167,13 @@ var bar = { a: 5 };
 bar.foo = function() {
   foo.call(bar);
 };
-	
+
 bar.foo();
 ```
 
 #### ES5 - Function.prototype.bind
 
-```
+```js
 function foo() {
   console.log(this.a);
 }
@@ -185,7 +185,7 @@ var baz = foo.bind(bar);
 
 ### new Binding
 
-```
+```js
 function foo() {
   this.a = 4;
 }

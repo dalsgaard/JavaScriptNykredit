@@ -1,22 +1,10 @@
-Part 1
+# JavaScript @ Nykredit
+
+## Part 1
+- Introduction to Programming
 - Introduction to JavaScript
 
-Part 2
-- Types
-- Values
-- Natives and ‘Boxing/Unboxing’
-- Coercion
-- Grammar
- 
-Part 3
-- Lexical Scope
-- Function Scope versus Block Scope
-- Hoisting
-- Scope Closure
-
-Part 4
-- this
-- Objects
-- Prototypes
-- Behaviour Delegation
-
+## Part 2
+- Scope
+- `this`
+- Object
