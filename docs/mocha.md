@@ -174,5 +174,74 @@ System.import('something').then(function (something) {
 ## Dynamically Generated Tests
 
 ```js
+describe('something', function () {
+  var something;
 
+  beforeEach(function () {
+    something = new Something();
+  });
+
+  function itShouldHaveA (prop) {
+    it('should have a ' + prop, function () {
+      assert.notStrictEqual(something[prop], undefined);
+    });    
+  }
+
+  itShouldHaveA('foo');
+  itShouldHaveA('bar');
+  itShouldHaveA('baz');
+
+});
+```
+
+## Pending Tests
+
+```js
+describe('something', function () {
+
+  it('should ...');
+
+});
+```
+
+## Selecting Tests
+
+### only
+
+```js
+describe.only('something', function () {
+
+});
+```
+
+```js
+it.only('should ...', function () {
+
+});
+```
+
+### skip
+
+```js
+describe.skip('something', function () {
+
+});
+```
+
+```js
+it.skip('should ...', function () {
+
+});
+```
+
+```js
+xdescribe('something', function () {
+
+});
+```
+
+```js
+xit('should ...', function () {
+
+});
 ```
