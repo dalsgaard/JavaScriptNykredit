@@ -3,9 +3,9 @@
 ## Producing a Promise
 
 ```js
-let promise = new Promise((resolve, reject) => {
-  setTimeout(() => {
-    let ms = Date.now();
+var promise = new Promise(function (resolve, reject) {
+  setTimeout(function () {
+    var ms = Date.now();
     if (ms % 2 === 0) {
       resolve(ms);
     } else {
@@ -19,11 +19,11 @@ let promise = new Promise((resolve, reject) => {
 
 ```js
 promise.then(
-  value => {
-    console.log(`Value ${value}`);
+  function (value) {
+    console.log('Value ' + value);
   },
-  reason => {
-    console.log(`Reason ${reason}`);
+  function (reason) {
+    console.log('Reason' + reason);
   }
 );
 ```
@@ -31,29 +31,29 @@ promise.then(
 ## Chaining
 
 ```js
-let q = promise.then(
-  value => {
-    console.log(`Value ${value}`);
+var q = promise.then(
+  function (value) {
+    console.log('Value ' + value);
   },
-  reason => {
-    console.log(`Reason ${reason}`);
+  function (reason) {
+    console.log('Reason' + reason);
   }
 );
 
-setTimeout(() => {
+setTimeout(function () {
   console.log(q);
 }, 2);
 ```
 
 ```js
-let q = promise.then(
-  value => {
-    console.log(`Value ${value}`);
+var q = promise.then(
+  function (value) {
+    console.log('Value ' + value);
     return value;
   },
-  reason => {
-    console.log(`Reason ${reason}`);
-    return value;
+  function (reason) {
+    console.log('Reason' + reason);
+    return reason;
   }
 );
 ```
@@ -61,9 +61,9 @@ let q = promise.then(
 ### Only handling fulfillments
 
 ```js
-let q = promise.then(
-  value => {
-    console.log(`Value ${value}`);
+var q = promise.then(
+  function (value) {
+    console.log('Value ' + value);
   }
 );
 ```
@@ -71,10 +71,10 @@ let q = promise.then(
 ### Only handling rejections
 
 ```js
-let q = promise.then(
+var q = promise.then(
   null,
-  reason => {
-    console.log(`Reason ${reason}`);
+  function (reason) {
+    console.log('Reason' + reason);
   }
 );
 ```
@@ -82,9 +82,9 @@ let q = promise.then(
 ### `catch`
 
 ```js
-let q = promise.catch(
-  reason => {
-    console.log(`Reason ${reason}`);
+var q = promise.catch(
+  function (reason) {
+    console.log('Reason' + reason);
   }
 );
 ```
@@ -93,12 +93,12 @@ let q = promise.catch(
 
 ```js
 promise.then(
-  value => {
-    console.log(`Value ${value}`);
+  function (value) {
+    console.log('Value ' + value);
   }
 ).catch(
-  reason => {
-    console.log(`Reason ${reason}`);
+  function (reason) {
+    console.log('Reason' + reason);
   }
 );
 ```
@@ -107,17 +107,17 @@ promise.then(
 
 ```js
 promise.then(
-  value => {
-    console.log(`Value ${value}`);
+  function (value) {
+    console.log('Value ' + value);
     return value;
   }
 ).then(
-  value => {
-    console.log(`Value again ${value}`);
+  function (value) {
+    console.log('Value again ' + value);
   }
 ).catch(
-  reason => {
-    console.log(`Reason ${reason}`);
+  function (reason) {
+    console.log('Reason' + reason);
   }
 );
 ```
@@ -126,18 +126,18 @@ promise.then(
 
 ```js
 promise.then(
-  value => {
-    console.log(`Value ${value}`);
+  function (value) {
+    console.log('Value ' + value);
     return value;
   }
 ).then(
-  value => {
-    console.log(`Value again ${value}`);
+  function (value) {
+    console.log('Value again ' + value);
     throw value;
   }
 ).catch(
-  reason => {
-    console.log(`Reason ${reason}`);
+  function (reason) {
+    console.log('Reason' + reason);
   }
 );
 ```
@@ -146,9 +146,9 @@ promise.then(
 
 ```js
 function createPromise(d) {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      let ms = Date.now();
+  return new Promise(function (resolve, reject) {
+    setTimeout(function () {
+      var ms = Date.now();
       if (ms % d === 0) {
         reject(ms);
       } else {
@@ -158,20 +158,20 @@ function createPromise(d) {
   });
 }
 
-let promise = createPromise(5);
+var promise = createPromise(5);
 
-let q = promise.then(
-  value => {
-    console.log(`Value ${value}`);
+var q = promise.then(
+  function (value) {
+    console.log('Value ' + value);
     return createPromise(5);
   }
 ).then(
-  value => {
-    console.log(`Value ${value}`);
+  function (value) {
+    console.log('Value ' + value);
   }
 ).catch(
-  reason => {
-    console.log(`Reason ${reason}`);
+  function (reason) {
+    console.log('Reason' + reason);
   }
 );
 ```
