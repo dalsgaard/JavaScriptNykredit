@@ -1,6 +1,12 @@
 
 describe('something', function () {
 
-  it('should ...');
+  it('should A');
+
+  it('should B');
+
+  it('should C', function () {
+    
+  });
 
 });
