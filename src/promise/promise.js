@@ -23,7 +23,7 @@ function promiseAdd (a, b) {
   });
 }
 
-promiseAdd(6, 3).then(function (res) {
+promiseAdd(2, 3).then(function (res) {
   console.log(res);
 }).catch(function (reason) {
   console.log('Oh no - not a ' + reason + '!');

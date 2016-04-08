@@ -25,20 +25,22 @@ function promiseAdd (a, b) {
 }
 
 function sum () {
-  return promiseAdd(2, 3).then(function (res) {
+  return promiseAdd(1, 3).then(function (res) {
     return promiseAdd(res, 4);
   }).then(function (res) {
     return promiseAdd(res, 5);
   }).then(function (res) {
     return promiseAdd(res, 6);
-  }).then(function (res) {
-    return spell(res);
-  }).catch(function (reason) {
-    throw spell(reason);
   });
 }
 
-sum().then(function (res) {
+var s = sum().then(function (res) {
+  return spell(res);
+}).catch(function (reason) {
+  throw spell(reason);
+});
+
+s.then(function (res) {
   console.log(res);
 }).catch(function (reason) {
   console.log('Oh no - not a ' + reason + '!');

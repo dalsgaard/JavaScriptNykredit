@@ -6,7 +6,11 @@ function randomPromise () {
     setTimeout(function () {
       var stopTime = Date.now();
       console.log(ms + ': ' + startTime + ' -> ' + stopTime);
-      resolve(ms);
+      if (ms > 400) {
+        reject(ms);
+      } else {
+        resolve(ms);
+      }
     }, ms);
   });
 }
@@ -14,4 +18,6 @@ function randomPromise () {
 var all = Promise.all([randomPromise(), randomPromise(), randomPromise()]);
 all.then(function (results) {
   console.log(results);
+}).catch(function (results) {
+  console.log('Error!', results);
 });

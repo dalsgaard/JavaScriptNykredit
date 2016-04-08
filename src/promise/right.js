@@ -23,7 +23,7 @@ function promiseAdd (a, b) {
   });
 }
 
-promiseAdd(1, 3).then(function (res) {
+promiseAdd(2, 3).then(function (res) {
   return promiseAdd(res, 4);
 }).then(function (res) {
   return promiseAdd(res, 5);
