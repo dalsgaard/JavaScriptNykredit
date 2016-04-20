@@ -1,28 +1,33 @@
 
-# Database
+# Cache
 
-Create a *promise* based *database* class. Data should be persisted to a JSON file.
+Create a promise based *cache* class. Data should be persisted to a JSON file.
 
 ## API
 
 ### Constructing
 
 ```js
-let db = new PromiseDatabase('data.json');
+let cache = new PromiseCache('data.json');
 ```
 
 ### open
 
 ```js
-db.open().then(conn => {
+cache.open().then(conn => {
 
 });
 ```
 
 ### set
 
+Records can be set to expire after a number of seconds. *Never* is default.
+
 ```js
-conn.set('key', 'value').then(() => {
+conn.set('key', 'value', 3600).then(() => {
+
+});
+conn.set('foo', 42).then(() => {
 
 });
 ```
@@ -44,8 +49,7 @@ conn.get('key', true).then(rec => {
 ```
 
 ```js
-let created = rec.created;
-let updated = rec.updated;
+let expires = rec.expires;
 let value = rec.value;
 ```
 
@@ -77,6 +81,6 @@ fs.writeFile('data.json', '{}', 'utf8', err => {
 
 });
 fs.readFile('data.json', 'utf8', (err, data) => {
-
+  
 });
 ```
