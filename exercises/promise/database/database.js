@@ -10,8 +10,8 @@ class Database {
 
   open () {
     return new Promise((resolve, reject) => {
-      fs.exists(this._fn, exists => {
-        if (exists) {
+      fs.stat(this._fn, (err, stats) => {
+        if (stats && stats.isFile()) {
           fs.readFile(this._fn, 'utf8', (err, data) => {
             if (err) {
               reject(err);
