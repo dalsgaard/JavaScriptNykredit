@@ -58,6 +58,7 @@ conn.close();
 [Node.js fs](https://nodejs.org/api/fs.html)
 
 ```js
+const fs = require('fs');
 fs.statSync('filename');
 fs.writeFileSync('data.json', '{}', 'utf8');
 fs.readFileSync('data.json', 'utf8');
