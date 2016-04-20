@@ -1,9 +1,9 @@
 'use strict'
 
-const Cache = require('./cache.js');
+const Database = require('./database.js');
 
-let cache = new Cache('temp/data.json');
-cache.open().then(conn => {
+let database = new Database('temp/data.json');
+database.open().then(conn => {
   conn.set('foo', 42);
   conn.set('bar', 13)
     .then(() => {

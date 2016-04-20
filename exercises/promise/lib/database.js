@@ -2,7 +2,7 @@
 
 const fs = require('fs');
 
-class Cache {
+class Database {
 
   constructor (fn) {
     this._fn = fn;
@@ -45,7 +45,7 @@ class Cache {
           this._sync();
           resolve();
         } else {
-          reject('Cache not open');
+          reject('Database not open');
         }
       }, 100);
     });
@@ -58,7 +58,7 @@ class Cache {
           let data = this._data[key];
           resolve(data ? data.value : null);
         } else {
-          reject('Cache not open');
+          reject('Database not open');
         }
       }, 50);
     });
@@ -89,4 +89,4 @@ class Cache {
 
 }
 
-module.exports = Cache;
+module.exports = Database;
