@@ -1,9 +1,9 @@
 'use strict'
 
-const Database = require('./database.js');
+const Cache = require('./cache.js');
 
-let database = new Database('temp/database-data.json');
-database.open().then(conn => {
+let cache = new Cache('temp/cache-data.json');
+cache.open().then(conn => {
   conn.set('foo', 42);
   conn.set('bar', 13)
     .then(() => {
@@ -14,7 +14,7 @@ database.open().then(conn => {
     .then(() => {
       return conn.close()
         .then(() => {
-          console.log('Database closed');
+          console.log('Cache closed');
         })
     })
     .catch(reason => {
